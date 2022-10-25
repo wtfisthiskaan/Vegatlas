@@ -86,7 +86,7 @@ struct RegisterViewTwo: View {
                 }
                 .padding(.bottom, 60)
                 NavigationLink {
-                    // continue
+                    // new user will be created
                 } label: {
                     Text("Sign Up")
                         .padding()
@@ -98,10 +98,7 @@ struct RegisterViewTwo: View {
                     Color(.white)
                 }
                 .cornerRadius(30)
-                
 
-
-                
             }
             .padding()
         }

@@ -2,13 +2,15 @@
 //  LoginView.swift
 //  Vegatlas
 //
-//  Created by Bahadır Etka Kılınç on 24.10.2022.
+//  Created by Bahadır Etka Kılınç on 25.10.2022.
 //
 
 import SwiftUI
 
-struct RegisterViewOne: View {
-    @EnvironmentObject var userInfo: UserInfos
+struct LoginView: View {
+
+    @State private var email: String = ""
+    @State private var password: String = ""
     var body: some View {
         
         ZStack{
@@ -21,25 +23,24 @@ struct RegisterViewOne: View {
                     .padding(.top, 150)
                     .padding(.bottom, 90)
                 
-                TextField("Full Name", text: $userInfo.fullName)
+                TextField("E-Mail", text: $email)
                     .padding()
                     .background {
                         Color(.white)
                     }
                     .cornerRadius(30)
                     .padding(.bottom, 10)
-                TextField("EMail", text: $userInfo.email)
+                SecureField("Password", text: $password)
                     .padding()
                     .background {
                         Color(.white)
                     }
                     .cornerRadius(30)
                     .padding(.bottom, 60)
-                NavigationLink {
-                    RegisterViewTwo()
-                        .environmentObject(userInfo)
+                Button {
+                    // check the email and password from database then get the user information
                 } label: {
-                    Text("Continue")
+                    Text("Sign In")
                         .padding()
                         .foregroundColor(Color("Green"))
                         .font(.system(.title3, weight: .heavy))
@@ -49,7 +50,6 @@ struct RegisterViewOne: View {
                     Color(.white)
                 }
                 .cornerRadius(30)
-
             }
             .padding()
         }
@@ -57,8 +57,8 @@ struct RegisterViewOne: View {
     }
 }
 
-struct RegisterViewOne_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterViewOne()
+        LoginView()
     }
 }
