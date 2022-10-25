@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegisterViewOne: View {
     @EnvironmentObject var userInfo: UserInfos
+    @Binding var hasAccount: Bool
+    @Environment(\.presentationMode) var isOn
     var body: some View {
         
         ZStack{
@@ -49,6 +51,18 @@ struct RegisterViewOne: View {
                     Color(.white)
                 }
                 .cornerRadius(30)
+                HStack{
+                    Text("Already have an account? ")
+                    Text("Login Here")
+                        .foregroundColor(.blue)
+                        .underline()
+                        .onTapGesture {
+                            isOn.wrappedValue.dismiss()
+                            withAnimation(.easeIn(duration: 1)) {
+                                hasAccount.toggle()
+                            }
+                        }
+                }
 
             }
             .padding()
@@ -59,6 +73,6 @@ struct RegisterViewOne: View {
 
 struct RegisterViewOne_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterViewOne()
+        RegisterViewOne(hasAccount: .constant(false))
     }
 }
