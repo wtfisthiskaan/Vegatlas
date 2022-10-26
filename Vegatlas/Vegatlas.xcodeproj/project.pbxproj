@@ -16,11 +16,11 @@
 		0B62B9292906F8AF00820FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B9282906F8AF00820FC7 /* Assets.xcassets */; };
 		0B62B92D2906F8AF00820FC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B92C2906F8AF00820FC7 /* Preview Assets.xcassets */; };
 		0BF128462908438C007C01DF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF128452908438C007C01DF /* LoginView.swift */; };
+		C24B607B2909D0B600B3B400 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B607A2909D0B500B3B400 /* ProfileView.swift */; };
 		C2BE4D4C2909983C001CD996 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE4D4B2909983C001CD996 /* MainAppView.swift */; };
 		C2BE4D4E29099B31001CD996 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE4D4D29099B31001CD996 /* MapView.swift */; };
 		C2BE4D5029099B57001CD996 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE4D4F29099B57001CD996 /* FavoriteView.swift */; };
 		C2BE4D5229099B7B001CD996 /* NotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE4D5129099B7B001CD996 /* NotView.swift */; };
-		C2BE4D5429099B8B001CD996 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE4D5329099B8B001CD996 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +36,11 @@
 		0B62B92A2906F8AF00820FC7 /* Vegatlas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vegatlas.entitlements; sourceTree = "<group>"; };
 		0B62B92C2906F8AF00820FC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BF128452908438C007C01DF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C24B607A2909D0B500B3B400 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C2BE4D4B2909983C001CD996 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		C2BE4D4D29099B31001CD996 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		C2BE4D4F29099B57001CD996 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		C2BE4D5129099B7B001CD996 /* NotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotView.swift; sourceTree = "<group>"; };
-		C2BE4D5329099B8B001CD996 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				C2BE4D4D29099B31001CD996 /* MapView.swift */,
 				C2BE4D4F29099B57001CD996 /* FavoriteView.swift */,
 				C2BE4D5129099B7B001CD996 /* NotView.swift */,
-				C2BE4D5329099B8B001CD996 /* ProfileView.swift */,
+				C24B607A2909D0B500B3B400 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 				0B62B9252906F8AE00820FC7 /* VegatlasApp.swift in Sources */,
 				C2BE4D5029099B57001CD996 /* FavoriteView.swift in Sources */,
 				C2BE4D5229099B7B001CD996 /* NotView.swift in Sources */,
-				C2BE4D5429099B8B001CD996 /* ProfileView.swift in Sources */,
+				C24B607B2909D0B600B3B400 /* ProfileView.swift in Sources */,
 				0B3AE3E429070BCB008C9F99 /* UserInfos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

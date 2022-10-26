@@ -17,6 +17,7 @@ struct ProfileView: View {
         
         
         NavigationView {
+
             
             VStack(alignment: .center, spacing: 0){
                     
@@ -96,10 +97,12 @@ struct ProfileView: View {
             .toolbarBackground(Color("Green"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
         }
+        }
         
 
+
     }
-}
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
