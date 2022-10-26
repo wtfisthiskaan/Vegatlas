@@ -15,7 +15,7 @@ struct ProfileView: View {
     
     var body: some View {
         
-        
+        // profile done
         NavigationView {
 
             
