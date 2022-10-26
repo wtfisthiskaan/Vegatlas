@@ -16,9 +16,7 @@ struct ProfileView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
         }
         
-        VStack{
-            
-        }
+
         
     }
 }
