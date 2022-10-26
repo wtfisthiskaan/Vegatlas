@@ -10,31 +10,35 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var userInfo = UserInfos()
     @State private var hasAccount = false
+    @State private var logAccount = true
     var body: some View {
         
         /*
          if user sign in directly main screen
          */
-        
-        
-        
-        
-        
-        /*
-         if user has already account then go to sign in screen
-         */
+        if logAccount{
+            
+            MainAppView()
+            
+        }
+        else {
         if hasAccount{
             LoginView()
 
-        }
+            }
         else{
             NavigationView {
                 RegisterViewOne(hasAccount: $hasAccount)
-                    .environmentObject(userInfo)
-                
+                .environmentObject(userInfo)
+                    
+                }
+                .accentColor(.black)
             }
-            .accentColor(.black)
         }
+        /*
+         if user has already account then go to sign in screen
+         */
+        
         
     }
 }
