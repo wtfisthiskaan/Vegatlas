@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-
+import MapKit
 struct MapView: View {
     var body: some View {
-        NavigationView {
-            Text("map")
+        NavigationView{
+            Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.989044, longitude: 29.023411), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))))
                 .toolbarBackground(Color("Green"), for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbar {
@@ -20,8 +20,9 @@ struct MapView: View {
                             .aspectRatio(contentMode: .fit)
                     }
                 }
-            
         }
+        
+        
         
     }
 }
