@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var userInfo = UserInfos()
     @State private var hasAccount = false
-    @State private var logAccount = true
+    @State private var logAccount = false
     var body: some View {
         
         /*

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct RegisterViewOne: View {
     @EnvironmentObject var userInfo: UserInfos
+    @State private var errorMessage = ""
+    @State private var isThereError = false
+    @State var navigationFlag = false
     @Binding var hasAccount: Bool
     @Environment(\.presentationMode) var isOn
     var body: some View {
@@ -37,14 +40,33 @@ struct RegisterViewOne: View {
                     }
                     .cornerRadius(30)
                     .padding(.bottom, 60)
-                NavigationLink {
-                    RegisterViewTwo()
-                        .environmentObject(userInfo)
+                Button {
+                    // if there is no error then go to second register screen
+                    if !userInfo.email.contains("@"){
+                        isThereError = true
+                        errorMessage = "E-Mail address is badly formatted."
+                    }
+                    else if userInfo.fullName.isEmpty{
+                        isThereError = true
+                        errorMessage = "Name could not be empty."
+                    }
+                    else{
+                        navigationFlag = true
+                    }
+                    
                 } label: {
                     Text("Continue")
                         .padding()
                         .foregroundColor(Color("Green"))
                         .font(.system(.title3, weight: .heavy))
+                }
+                .alert(errorMessage, isPresented: $isThereError){
+                    Button {
+                        isThereError = false
+                    } label: {
+                        Text("OK")
+                    }
+
                 }
                 .frame(maxWidth: .infinity)
                 .background {
@@ -63,6 +85,13 @@ struct RegisterViewOne: View {
                             }
                         }
                 }
+                // navigate between screens
+                NavigationLink(destination: RegisterViewTwo()
+                    .environmentObject(userInfo),
+                               isActive: $navigationFlag,
+                               label: {
+                    EmptyView()
+                })
 
             }
             .padding()
