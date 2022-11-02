@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
 struct CheckBoxView: View {
     @Binding var checked: Bool
-
+    
     var body: some View {
         Image(systemName: checked ? "checkmark.square.fill" : "square")
             .foregroundColor(checked ? Color("Purple") : Color.secondary)
@@ -22,6 +25,8 @@ struct CheckBoxView: View {
 struct RegisterViewTwo: View {
     @EnvironmentObject var userInfo: UserInfos
     @State private var passwordCheck = ""
+    @State private var errorMessage = ""
+    @State private var isThereError = false
     @State private var term1 = false
     @State private var term2 = false
 
@@ -55,9 +60,9 @@ struct RegisterViewTwo: View {
                     
                 Picker("Please Select",selection: $userInfo.eatBehavior) {
                     Text("Vegeterian")
-                        .tag(1)
+                        .tag("Vegeterian")
                     Text("Vegan")
-                        .tag(2)
+                        .tag("Vegan")
                 }
                 .pickerStyle(.segmented)
                 .padding(.top, 30)
@@ -85,14 +90,42 @@ struct RegisterViewTwo: View {
                     Spacer()
                 }
                 .padding(.bottom, 60)
-                NavigationLink {
-                    // new user will be created
+                Button {
+                    
+                    if self.userInfo.phoneNumber.isEmpty{
+                        isThereError.toggle()
+                        errorMessage = "Phone number could not be empty."
+                    }else if userInfo.password != self.passwordCheck{
+                        isThereError.toggle()
+                        errorMessage = "Passwords does not match."
+                    }else if userInfo.password.isEmpty{
+                        isThereError.toggle()
+                        errorMessage = "Password can not be empty."
+                    }else if userInfo.eatBehavior.isEmpty{
+                        isThereError.toggle()
+                        errorMessage = "You have to select eat behavior."
+                    
+                    }else if !term1 || !term2{
+                        isThereError.toggle()
+                        errorMessage = "You have to accept the terms"
+                    }else{
+                        userInfo.hasLoggedIn.toggle()
+                    }
                 } label: {
                     Text("Sign Up")
                         .padding()
                         .foregroundColor(Color("Green"))
                         .font(.system(.title3, weight: .heavy))
                 }
+                .alert(errorMessage, isPresented: $isThereError){
+                    Button {
+                        isThereError = false
+                    } label: {
+                        Text("OK")
+                    }
+
+                }
+                
                 .frame(maxWidth: .infinity)
                 .background {
                     Color(.white)

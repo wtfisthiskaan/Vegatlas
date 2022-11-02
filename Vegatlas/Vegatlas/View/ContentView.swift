@@ -16,15 +16,14 @@ struct ContentView: View {
         /*
          if user sign in directly main screen
          */
-        if logAccount{
+        if userInfo.hasLoggedIn{
             
             MainAppView()
             
         }
         else {
         if hasAccount{
-            LoginView()
-
+            LoginView(hasLoggedIn: $userInfo.hasLoggedIn)
             }
         else{
             NavigationView {

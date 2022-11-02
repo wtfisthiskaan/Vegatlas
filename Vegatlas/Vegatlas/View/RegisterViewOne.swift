@@ -40,39 +40,43 @@ struct RegisterViewOne: View {
                     }
                     .cornerRadius(30)
                     .padding(.bottom, 60)
-                Button {
-                    // if there is no error then go to second register screen
-                    if !userInfo.email.contains("@"){
-                        isThereError = true
-                        errorMessage = "E-Mail address is badly formatted."
-                    }
-                    else if userInfo.fullName.isEmpty{
-                        isThereError = true
-                        errorMessage = "Name could not be empty."
-                    }
-                    else{
-                        navigationFlag = true
-                    }
-                    
-                } label: {
-                    Text("Continue")
-                        .padding()
-                        .foregroundColor(Color("Green"))
-                        .font(.system(.title3, weight: .heavy))
-                }
-                .alert(errorMessage, isPresented: $isThereError){
+                NavigationLink(destination: RegisterViewTwo()
+                    .environmentObject(userInfo),
+                               isActive: $navigationFlag,
+                               label: {
                     Button {
-                        isThereError = false
+                        // if there is no error then go to second register screen
+                        if userInfo.fullName.isEmpty{
+                            isThereError.toggle()
+                            errorMessage = "Name could not be empty."
+                        }else if userInfo.email.isEmpty{
+                            isThereError.toggle()
+                            errorMessage = "E-Mail address could not be empty."
+                        }else{
+                            navigationFlag = true
+                        }
+                        
                     } label: {
-                        Text("OK")
+                        Text("Continue")
+                            .padding()
+                            .foregroundColor(Color("Green"))
+                            .font(.system(.title3, weight: .heavy))
                     }
+                    .alert(errorMessage, isPresented: $isThereError){
+                        Button {
+                            isThereError = false
+                        } label: {
+                            Text("OK")
+                        }
 
-                }
-                .frame(maxWidth: .infinity)
-                .background {
-                    Color(.white)
-                }
-                .cornerRadius(30)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .background {
+                        Color(.white)
+                    }
+                    .cornerRadius(30)
+    
+                })
                 HStack{
                     Text("Already have an account? ")
                     Text("Login Here")
@@ -85,14 +89,6 @@ struct RegisterViewOne: View {
                             }
                         }
                 }
-                // navigate between screens
-                NavigationLink(destination: RegisterViewTwo()
-                    .environmentObject(userInfo),
-                               isActive: $navigationFlag,
-                               label: {
-                    EmptyView()
-                })
-
             }
             .padding()
         }

@@ -8,9 +8,10 @@
 import Foundation
 
 class UserInfos: ObservableObject{
+    @Published var hasLoggedIn = false
     @Published var fullName: String = ""
     @Published var email: String = ""
     @Published var phoneNumber: String = ""
     @Published var password: String = ""
-    @Published var eatBehavior = 0
+    @Published var eatBehavior = ""
 }

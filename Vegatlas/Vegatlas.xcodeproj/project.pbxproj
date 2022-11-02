@@ -15,6 +15,13 @@
 		0B62B9272906F8AE00820FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9262906F8AE00820FC7 /* ContentView.swift */; };
 		0B62B9292906F8AF00820FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B9282906F8AF00820FC7 /* Assets.xcassets */; };
 		0B62B92D2906F8AF00820FC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B92C2906F8AF00820FC7 /* Preview Assets.xcassets */; };
+		0BCCD9432912BD64008A9961 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BCCD9422912BD64008A9961 /* GoogleService-Info.plist */; };
+		0BCCD9462912BE1D008A9961 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCCD9452912BE1D008A9961 /* FirebaseAuth */; };
+		0BCCD9482912BE1D008A9961 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCCD9472912BE1D008A9961 /* FirebaseDatabase */; };
+		0BCCD94A2912BE1D008A9961 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCCD9492912BE1D008A9961 /* FirebaseDatabaseSwift */; };
+		0BCCD94C2912BE1D008A9961 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCCD94B2912BE1D008A9961 /* FirebaseFirestore */; };
+		0BCCD94E2912BE1D008A9961 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCCD94D2912BE1D008A9961 /* FirebaseFirestoreSwift */; };
+		0BCCD9502912BE1D008A9961 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCCD94F2912BE1D008A9961 /* FirebaseMessaging */; };
 		0BF128462908438C007C01DF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF128452908438C007C01DF /* LoginView.swift */; };
 		C24B607B2909D0B600B3B400 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B607A2909D0B500B3B400 /* ProfileView.swift */; };
 		C2BE4D4C2909983C001CD996 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BE4D4B2909983C001CD996 /* MainAppView.swift */; };
@@ -35,6 +42,7 @@
 		0B62B9282906F8AF00820FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B62B92A2906F8AF00820FC7 /* Vegatlas.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vegatlas.entitlements; sourceTree = "<group>"; };
 		0B62B92C2906F8AF00820FC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0BCCD9422912BD64008A9961 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BF128452908438C007C01DF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C24B607A2909D0B500B3B400 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C2BE4D4B2909983C001CD996 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
@@ -48,6 +56,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCCD9502912BE1D008A9961 /* FirebaseMessaging in Frameworks */,
+				0BCCD94E2912BE1D008A9961 /* FirebaseFirestoreSwift in Frameworks */,
+				0BCCD94A2912BE1D008A9961 /* FirebaseDatabaseSwift in Frameworks */,
+				0BCCD94C2912BE1D008A9961 /* FirebaseFirestore in Frameworks */,
+				0BCCD9482912BE1D008A9961 /* FirebaseDatabase in Frameworks */,
+				0BCCD9462912BE1D008A9961 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +116,7 @@
 				0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */,
 				0B3AE3DA2906FA8B008C9F99 /* View */,
 				0B62B9282906F8AF00820FC7 /* Assets.xcassets */,
+				0BCCD9422912BD64008A9961 /* GoogleService-Info.plist */,
 				0B62B92A2906F8AF00820FC7 /* Vegatlas.entitlements */,
 				0B62B92B2906F8AF00820FC7 /* Preview Content */,
 				0B3AE3DB2906FAC1008C9F99 /* Launch Screen.storyboard */,
@@ -133,6 +148,14 @@
 			dependencies = (
 			);
 			name = Vegatlas;
+			packageProductDependencies = (
+				0BCCD9452912BE1D008A9961 /* FirebaseAuth */,
+				0BCCD9472912BE1D008A9961 /* FirebaseDatabase */,
+				0BCCD9492912BE1D008A9961 /* FirebaseDatabaseSwift */,
+				0BCCD94B2912BE1D008A9961 /* FirebaseFirestore */,
+				0BCCD94D2912BE1D008A9961 /* FirebaseFirestoreSwift */,
+				0BCCD94F2912BE1D008A9961 /* FirebaseMessaging */,
+			);
 			productName = Vegatlas;
 			productReference = 0B62B9212906F8AE00820FC7 /* Vegatlas.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +184,9 @@
 				Base,
 			);
 			mainGroup = 0B62B9182906F8AE00820FC7;
+			packageReferences = (
+				0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 0B62B9222906F8AE00820FC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B3AE3DC2906FAC1008C9F99 /* Launch Screen.storyboard in Resources */,
+				0BCCD9432912BD64008A9961 /* GoogleService-Info.plist in Resources */,
 				0B62B92D2906F8AF00820FC7 /* Preview Assets.xcassets in Resources */,
 				0B62B9292906F8AF00820FC7 /* Assets.xcassets in Resources */,
 			);
@@ -344,7 +371,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bahadiretka.Vegatlas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vegatlas.Vegatlas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -384,7 +411,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bahadiretka.Vegatlas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vegatlas.Vegatlas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -416,6 +443,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0BCCD9452912BE1D008A9961 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		0BCCD9472912BE1D008A9961 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		0BCCD9492912BE1D008A9961 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		0BCCD94B2912BE1D008A9961 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0BCCD94D2912BE1D008A9961 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		0BCCD94F2912BE1D008A9961 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BCCD9442912BE1D008A9961 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B62B9192906F8AE00820FC7 /* Project object */;
 }

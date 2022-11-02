@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct LoginView: View {
-
+    @Binding var hasLoggedIn: Bool
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var errorMessage = ""
+    @State private var isThereError = false
+    @State private var isPopUpPresented = false
     var body: some View {
         
         ZStack{
@@ -39,11 +42,28 @@ struct LoginView: View {
                     .padding(.bottom, 60)
                 Button {
                     // check the email and password from database then get the user information
+                    if email.isEmpty{
+                        isThereError.toggle()
+                        errorMessage = "E-Mail could not be empty."
+                    }else if password.isEmpty{
+                        isThereError.toggle()
+                        errorMessage = "Password could not be empty."
+                    }else{
+                        hasLoggedIn.toggle()
+                        // firebase sign in
+                    }
                 } label: {
                     Text("Sign In")
                         .padding()
                         .foregroundColor(Color("Green"))
                         .font(.system(.title3, weight: .heavy))
+                }
+                .alert(errorMessage, isPresented: $isThereError){
+                    Button {
+                        isThereError = false
+                    } label: {
+                        Text("OK")
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .background {
@@ -59,6 +79,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(hasLoggedIn: .constant(false))
     }
 }
