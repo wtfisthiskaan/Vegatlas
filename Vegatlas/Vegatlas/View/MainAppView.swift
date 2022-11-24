@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainAppView: View {
-    
+    @EnvironmentObject var userInfo: UserInfos
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color("Gray"))
        // UITabBar.appearance().barTintColor = UIColor(Color("Green"))
@@ -31,7 +31,7 @@ struct MainAppView: View {
               Image(systemName: "bell.fill")
               Text("Notification")
             })
-          ProfileView()
+            ProfileView(hasLoggedIn: $userInfo.hasLoggedIn)
             .tabItem({
               Image(systemName: "person.fill")
               Text("Account")

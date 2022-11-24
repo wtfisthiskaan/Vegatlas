@@ -24,7 +24,7 @@ struct CheckBoxView: View {
 
 struct RegisterViewTwo: View {
     @EnvironmentObject var userInfo: UserInfos
-    @State private var passwordCheck = ""
+    @State private var passwordCheck = "1234566"
     @State private var errorMessage = ""
     @State private var isThereError = false
     @State private var term1 = false
@@ -109,6 +109,20 @@ struct RegisterViewTwo: View {
                         isThereError.toggle()
                         errorMessage = "You have to accept the terms"
                     }else{
+                        // register new user
+                        Auth.auth().createUser(withEmail: userInfo.email, password: userInfo.password) { authResult, error in
+                            if let error = error{
+                                isThereError.toggle()
+                                errorMessage = error.localizedDescription
+                            }else{
+                                let db = Firestore.firestore()
+                                db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
+                                    "phoneNumber" : userInfo.phoneNumber,
+                                    "eatBehavior" : userInfo.eatBehavior,
+                                    "fullName" : userInfo.fullName
+                                ])
+                            }
+                        }
                         userInfo.hasLoggedIn.toggle()
                     }
                 } label: {

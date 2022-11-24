@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct LoginView: View {
     @Binding var hasLoggedIn: Bool
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State private var email: String = "abcdefg@123.com"
+    @State private var password: String = "1234566"
     @State private var errorMessage = ""
     @State private var isThereError = false
     @State private var isPopUpPresented = false
@@ -49,6 +50,13 @@ struct LoginView: View {
                         isThereError.toggle()
                         errorMessage = "Password could not be empty."
                     }else{
+                        Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
+                            if let error = error{
+                                isThereError.toggle()
+                                errorMessage = error.localizedDescription
+                            }
+                          // ...
+                        }
                         hasLoggedIn.toggle()
                         // firebase sign in
                     }

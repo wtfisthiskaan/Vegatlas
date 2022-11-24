@@ -54,6 +54,7 @@ struct RegisterViewOne: View {
                             errorMessage = "E-Mail address could not be empty."
                         }else{
                             navigationFlag = true
+                            
                         }
                         
                     } label: {

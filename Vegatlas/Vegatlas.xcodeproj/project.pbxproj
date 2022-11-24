@@ -11,6 +11,7 @@
 		0B3AE3DF29070017008C9F99 /* RegisterViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3DE29070017008C9F99 /* RegisterViewOne.swift */; };
 		0B3AE3E129070B4F008C9F99 /* RegisterViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3E029070B4F008C9F99 /* RegisterViewTwo.swift */; };
 		0B3AE3E429070BCB008C9F99 /* UserInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3E329070BCB008C9F99 /* UserInfos.swift */; };
+		0B43F35A292FCD460084C709 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F359292FCD460084C709 /* FirebaseManager.swift */; };
 		0B62B9252906F8AE00820FC7 /* VegatlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */; };
 		0B62B9272906F8AE00820FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9262906F8AE00820FC7 /* ContentView.swift */; };
 		0B62B9292906F8AF00820FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B9282906F8AF00820FC7 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		0B3AE3DE29070017008C9F99 /* RegisterViewOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewOne.swift; sourceTree = "<group>"; };
 		0B3AE3E029070B4F008C9F99 /* RegisterViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewTwo.swift; sourceTree = "<group>"; };
 		0B3AE3E329070BCB008C9F99 /* UserInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfos.swift; sourceTree = "<group>"; };
+		0B43F359292FCD460084C709 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		0B62B9212906F8AE00820FC7 /* Vegatlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegatlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegatlasApp.swift; sourceTree = "<group>"; };
 		0B62B9262906F8AE00820FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				0B3AE3E329070BCB008C9F99 /* UserInfos.swift */,
+				0B43F359292FCD460084C709 /* FirebaseManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B43F35A292FCD460084C709 /* FirebaseManager.swift in Sources */,
 				0BF128462908438C007C01DF /* LoginView.swift in Sources */,
 				C2BE4D4E29099B31001CD996 /* MapView.swift in Sources */,
 				0B3AE3DF29070017008C9F99 /* RegisterViewOne.swift in Sources */,

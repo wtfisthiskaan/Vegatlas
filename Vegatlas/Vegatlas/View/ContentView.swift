@@ -6,34 +6,39 @@
 //
 
 import SwiftUI
-
+import FirebaseAuth
 struct ContentView: View {
     @StateObject var userInfo = UserInfos()
     @State private var hasAccount = false
     @State private var logAccount = false
+    @State private var userLoggedIn = Auth.auth().currentUser != nil ? true : false
     var body: some View {
         
         /*
          if user sign in directly main screen
          */
+        
         if userInfo.hasLoggedIn{
             
             MainAppView()
+                .environmentObject(userInfo)
             
         }
         else {
-        if hasAccount{
-            LoginView(hasLoggedIn: $userInfo.hasLoggedIn)
+            if hasAccount{
+                LoginView(hasLoggedIn: $userInfo.hasLoggedIn)
             }
-        else{
-            NavigationView {
-                RegisterViewOne(hasAccount: $hasAccount)
-                .environmentObject(userInfo)
+            else{
+                NavigationView {
+                    RegisterViewOne(hasAccount: $hasAccount)
+                        .environmentObject(userInfo)
                     
                 }
                 .accentColor(.black)
             }
+            
         }
+        
         /*
          if user has already account then go to sign in screen
          */
