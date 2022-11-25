@@ -16,7 +16,7 @@ struct Restaurant: Identifiable{
     var averageRating : Double
     var workingHours : String
     var description: String
-    var menu: [Food]
-    var comments: [Comment]
+    var menu = [Food]()
+    var comments = [Comment]()
     var restaurantType : String
 }

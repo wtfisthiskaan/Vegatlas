@@ -26,8 +26,20 @@ struct MapView: View {
     
     var body: some View {
         NavigationView{
-            Map(coordinateRegion: $region, annotationItems: annotations) {
-                MapMarker(coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude),tint: Color("Green"))
+            Map(coordinateRegion: $region, annotationItems: annotations) { restaurant in
+                MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: restaurant.latitude, longitude: restaurant.longitude)) {
+                    NavigationLink {
+                        RestaurantDetailView(restaurant: restaurant)
+                    } label: {
+                        Image(systemName: "fork.knife.circle.fill")
+                    }
+
+                }
+                
+
+                
+                    
+                    
             }
                 .toolbarBackground(Color("Green"), for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)

@@ -18,6 +18,9 @@
 		0B43F364292FEABA0084C709 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F363292FEABA0084C709 /* CommentModel.swift */; };
 		0B43F366292FEC6D0084C709 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F365292FEC6D0084C709 /* NotificationsModel.swift */; };
 		0B43F368292FEE050084C709 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F367292FEE050084C709 /* Location.swift */; };
+		0B43F39C29312FE20084C709 /* RestaurantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F39B29312FE20084C709 /* RestaurantDetailView.swift */; };
+		0B43F39E2931370A0084C709 /* AddCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F39D2931370A0084C709 /* AddCommentView.swift */; };
+		0B43F3A1293138450084C709 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F3A0293138450084C709 /* Modifier.swift */; };
 		0B62B9252906F8AE00820FC7 /* VegatlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */; };
 		0B62B9272906F8AE00820FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9262906F8AE00820FC7 /* ContentView.swift */; };
 		0B62B9292906F8AF00820FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B9282906F8AF00820FC7 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		0B43F363292FEABA0084C709 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		0B43F365292FEC6D0084C709 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
 		0B43F367292FEE050084C709 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0B43F39B29312FE20084C709 /* RestaurantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailView.swift; sourceTree = "<group>"; };
+		0B43F39D2931370A0084C709 /* AddCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentView.swift; sourceTree = "<group>"; };
+		0B43F3A0293138450084C709 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		0B62B9212906F8AE00820FC7 /* Vegatlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegatlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegatlasApp.swift; sourceTree = "<group>"; };
 		0B62B9262906F8AE00820FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 				C2BE4D4F29099B57001CD996 /* FavoriteView.swift */,
 				C2BE4D5129099B7B001CD996 /* NotView.swift */,
 				C24B607A2909D0B500B3B400 /* ProfileView.swift */,
+				0B43F39B29312FE20084C709 /* RestaurantDetailView.swift */,
+				0B43F39D2931370A0084C709 /* AddCommentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +119,14 @@
 				0B43F367292FEE050084C709 /* Location.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0B43F39F2931382B0084C709 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0B43F3A0293138450084C709 /* Modifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		0B62B9182906F8AE00820FC7 = {
@@ -132,6 +148,7 @@
 		0B62B9232906F8AE00820FC7 /* Vegatlas */ = {
 			isa = PBXGroup;
 			children = (
+				0B43F39F2931382B0084C709 /* Modifiers */,
 				0B3AE3E229070BAF008C9F99 /* Model */,
 				0B3AE3DD2906FD1C008C9F99 /* Info.plist */,
 				0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */,
@@ -238,6 +255,7 @@
 			files = (
 				0B43F35A292FCD460084C709 /* FirebaseManager.swift in Sources */,
 				0B43F364292FEABA0084C709 /* CommentModel.swift in Sources */,
+				0B43F39E2931370A0084C709 /* AddCommentView.swift in Sources */,
 				0B43F35C292FE8220084C709 /* RestaurantModel.swift in Sources */,
 				0BF128462908438C007C01DF /* LoginView.swift in Sources */,
 				0B43F368292FEE050084C709 /* Location.swift in Sources */,
@@ -250,10 +268,12 @@
 				C2BE4D5029099B57001CD996 /* FavoriteView.swift in Sources */,
 				C2BE4D5229099B7B001CD996 /* NotView.swift in Sources */,
 				C24B607B2909D0B600B3B400 /* ProfileView.swift in Sources */,
+				0B43F39C29312FE20084C709 /* RestaurantDetailView.swift in Sources */,
 				0B3AE3E429070BCB008C9F99 /* UserInfos.swift in Sources */,
 				0B43F360292FEA5E0084C709 /* UserModel.swift in Sources */,
 				0B43F366292FEC6D0084C709 /* NotificationsModel.swift in Sources */,
 				0B43F35E292FE9CF0084C709 /* FoodModel.swift in Sources */,
+				0B43F3A1293138450084C709 /* Modifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

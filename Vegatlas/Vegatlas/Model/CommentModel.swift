@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Comment {
+struct Comment: Identifiable{
+    var id = UUID()
     var userFullName: String
     var commentDate: String
     var text: String

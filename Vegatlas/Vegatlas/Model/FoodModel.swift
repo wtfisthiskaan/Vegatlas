@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Food {
-    var name: String
-    var price: String
+struct Food: Identifiable{
+    var id = UUID()
+    var name: String = ""
+    var price: String = ""
 }
