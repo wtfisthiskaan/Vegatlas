@@ -14,18 +14,20 @@ struct Location: Identifiable {
     let name: String
     let coordinate: CLLocationCoordinate2D
 }
-let annotations = [
-        Location(name: "Rulo Lezzetler", coordinate: CLLocationCoordinate2D(latitude: 40.988471, longitude: 29.027615)),
-        Location(name: "VeganArsist", coordinate: CLLocationCoordinate2D(latitude: 40.99160, longitude: 29.072880)),
-]
+
+
+
+
+var annotations = [Restaurant]()
 
 struct MapView: View {
+    
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.989044, longitude: 29.023411), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     var body: some View {
         NavigationView{
             Map(coordinateRegion: $region, annotationItems: annotations) {
-                MapMarker(coordinate: $0.coordinate,tint: Color("Green"))
+                MapMarker(coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude),tint: Color("Green"))
             }
                 .toolbarBackground(Color("Green"), for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
@@ -36,6 +38,11 @@ struct MapView: View {
                             .aspectRatio(contentMode: .fit)
                     }
                 }
+        }
+        .onAppear{
+            FirebaseManager.getRestaurantData(completionHandler: { data in
+                annotations = data!
+            })
         }
         
         

@@ -12,6 +12,12 @@
 		0B3AE3E129070B4F008C9F99 /* RegisterViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3E029070B4F008C9F99 /* RegisterViewTwo.swift */; };
 		0B3AE3E429070BCB008C9F99 /* UserInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3E329070BCB008C9F99 /* UserInfos.swift */; };
 		0B43F35A292FCD460084C709 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F359292FCD460084C709 /* FirebaseManager.swift */; };
+		0B43F35C292FE8220084C709 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F35B292FE8220084C709 /* RestaurantModel.swift */; };
+		0B43F35E292FE9CF0084C709 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F35D292FE9CE0084C709 /* FoodModel.swift */; };
+		0B43F360292FEA5E0084C709 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F35F292FEA5E0084C709 /* UserModel.swift */; };
+		0B43F364292FEABA0084C709 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F363292FEABA0084C709 /* CommentModel.swift */; };
+		0B43F366292FEC6D0084C709 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F365292FEC6D0084C709 /* NotificationsModel.swift */; };
+		0B43F368292FEE050084C709 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B43F367292FEE050084C709 /* Location.swift */; };
 		0B62B9252906F8AE00820FC7 /* VegatlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */; };
 		0B62B9272906F8AE00820FC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62B9262906F8AE00820FC7 /* ContentView.swift */; };
 		0B62B9292906F8AF00820FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B62B9282906F8AF00820FC7 /* Assets.xcassets */; };
@@ -38,6 +44,12 @@
 		0B3AE3E029070B4F008C9F99 /* RegisterViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewTwo.swift; sourceTree = "<group>"; };
 		0B3AE3E329070BCB008C9F99 /* UserInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfos.swift; sourceTree = "<group>"; };
 		0B43F359292FCD460084C709 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		0B43F35B292FE8220084C709 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
+		0B43F35D292FE9CE0084C709 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		0B43F35F292FEA5E0084C709 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0B43F363292FEABA0084C709 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		0B43F365292FEC6D0084C709 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		0B43F367292FEE050084C709 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0B62B9212906F8AE00820FC7 /* Vegatlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vegatlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B62B9242906F8AE00820FC7 /* VegatlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VegatlasApp.swift; sourceTree = "<group>"; };
 		0B62B9262906F8AE00820FC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +103,12 @@
 			children = (
 				0B3AE3E329070BCB008C9F99 /* UserInfos.swift */,
 				0B43F359292FCD460084C709 /* FirebaseManager.swift */,
+				0B43F35B292FE8220084C709 /* RestaurantModel.swift */,
+				0B43F35D292FE9CE0084C709 /* FoodModel.swift */,
+				0B43F35F292FEA5E0084C709 /* UserModel.swift */,
+				0B43F363292FEABA0084C709 /* CommentModel.swift */,
+				0B43F365292FEC6D0084C709 /* NotificationsModel.swift */,
+				0B43F367292FEE050084C709 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,7 +237,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B43F35A292FCD460084C709 /* FirebaseManager.swift in Sources */,
+				0B43F364292FEABA0084C709 /* CommentModel.swift in Sources */,
+				0B43F35C292FE8220084C709 /* RestaurantModel.swift in Sources */,
 				0BF128462908438C007C01DF /* LoginView.swift in Sources */,
+				0B43F368292FEE050084C709 /* Location.swift in Sources */,
 				C2BE4D4E29099B31001CD996 /* MapView.swift in Sources */,
 				0B3AE3DF29070017008C9F99 /* RegisterViewOne.swift in Sources */,
 				C2BE4D4C2909983C001CD996 /* MainAppView.swift in Sources */,
@@ -230,6 +251,9 @@
 				C2BE4D5229099B7B001CD996 /* NotView.swift in Sources */,
 				C24B607B2909D0B600B3B400 /* ProfileView.swift in Sources */,
 				0B3AE3E429070BCB008C9F99 /* UserInfos.swift in Sources */,
+				0B43F360292FEA5E0084C709 /* UserModel.swift in Sources */,
+				0B43F366292FEC6D0084C709 /* NotificationsModel.swift in Sources */,
+				0B43F35E292FE9CF0084C709 /* FoodModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
