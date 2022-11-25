@@ -52,16 +52,14 @@ struct MapView: View {
                 }
         }
         .onAppear{
-            FirebaseManager.getRestaurantData(completionHandler: { data in
-                annotations = data!
-            })
+            DispatchQueue.main.async {
+                FirebaseManager.getRestaurantData(completionHandler: { data in
+                    annotations = data!
+                })
+            }
         }
-        
-        
-        
     }
 }
-
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView()
