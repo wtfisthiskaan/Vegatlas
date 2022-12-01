@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3495D329396F080097994F /* NotDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3495D229396F080097994F /* NotDetailView.swift */; };
 		0B3AE3DC2906FAC1008C9F99 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3AE3DB2906FAC1008C9F99 /* Launch Screen.storyboard */; };
 		0B3AE3DF29070017008C9F99 /* RegisterViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3DE29070017008C9F99 /* RegisterViewOne.swift */; };
 		0B3AE3E129070B4F008C9F99 /* RegisterViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3AE3E029070B4F008C9F99 /* RegisterViewTwo.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B3495D229396F080097994F /* NotDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetailView.swift; sourceTree = "<group>"; };
 		0B3AE3DB2906FAC1008C9F99 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0B3AE3DD2906FD1C008C9F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0B3AE3DE29070017008C9F99 /* RegisterViewOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewOne.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				0B43F3AA293919620084C709 /* CommentView.swift */,
 				0B43F3AC293919810084C709 /* CommentDetailView.swift */,
 				0B43F3AE29391E370084C709 /* FavoriteRowView.swift */,
+				0B3495D229396F080097994F /* NotDetailView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				0B43F35A292FCD460084C709 /* FirebaseManager.swift in Sources */,
 				0B43F364292FEABA0084C709 /* CommentModel.swift in Sources */,
 				0B43F39E2931370A0084C709 /* AddCommentView.swift in Sources */,
+				0B3495D329396F080097994F /* NotDetailView.swift in Sources */,
 				0B43F3AD293919810084C709 /* CommentDetailView.swift in Sources */,
 				0B43F35C292FE8220084C709 /* RestaurantModel.swift in Sources */,
 				0B43F3A9293901220084C709 /* RestaurantMenuView.swift in Sources */,

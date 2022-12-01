@@ -15,6 +15,17 @@ struct VegatlasApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear{
+                    DispatchQueue.main.async {
+                        FirebaseManager.getRestaurantData(completionHandler: { data in
+                            annotations = data!
+                        })
+                        FirebaseManager.getUserData { data in
+                            favRestaurants = data?["favorites"] as! [String]
+                        }
+                    }
+             
+                }
         }
     }
 }

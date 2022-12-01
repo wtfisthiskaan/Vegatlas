@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Notifications {
+struct Notifications: Identifiable {
+    var id = UUID()
     var title: String
     var date: String
     var text: String

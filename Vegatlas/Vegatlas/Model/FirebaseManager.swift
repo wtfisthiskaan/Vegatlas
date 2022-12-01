@@ -11,7 +11,9 @@ import Firebase
 var favRestaurants = [String]()
 var annotations = [Restaurant]()
 
+
 struct FirebaseManager{
+    
     static func getUserData(completionHandler: @escaping ([String : Any]?) -> Void){
         let db = Firestore.firestore()
         DispatchQueue.main.async() {
@@ -20,6 +22,26 @@ struct FirebaseManager{
                 if let document = document, document.exists {
                     completionHandler(document.data())
                 }
+            }
+        }
+    }
+    static func getNotifications(completionHandler: @escaping ([Notifications]?) -> Void){
+        let db = Firestore.firestore()
+        var notifications = [Notifications]()
+        DispatchQueue.main.async() {
+            let docRef = db.collection("Notifications")
+            docRef.getDocuments { snapshot, error in
+                if let error = error{
+                    print(error.localizedDescription)
+                }else{
+                    snapshot?.documents.forEach({ not in
+                        notifications.append(Notifications(title: not["title"] as! String,
+                                                           date: not["date"] as! String,
+                                                           text: not["text"] as! String))
+                    })
+                    completionHandler(notifications)
+                }
+                
             }
         }
     }

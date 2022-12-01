@@ -49,6 +49,9 @@ struct RestaurantDetailView: View {
                                         "favorites": FieldValue.arrayRemove([restaurant.name])
                                     ])
                                 }
+                                FirebaseManager.getUserData { data in
+                                    favRestaurants = data?["favorites"] as! [String]
+                                }
                                 isLiked.toggle()
                             } label: {
                                 Image(systemName: isLiked ? "heart.fill" : "heart")

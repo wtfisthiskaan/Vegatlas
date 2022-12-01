@@ -6,16 +6,28 @@
 //
 
 import SwiftUI
-
+import Firebase
 struct NotView: View {
+    @State var notifications = [Notifications]()
+    
     var body: some View {
         NavigationView {
-            Text("notifications")
-                .navigationBarTitle("Notifications", displayMode: .inline)
-                .toolbarBackground(Color("Green"), for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
+            List{
+                ForEach(notifications) { notification in
+                    NotDetailView(notification: notification)
+                }
+            }
+            .navigationBarTitle("Notifications", displayMode: .inline)
+            .toolbarBackground(Color("Green"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+        }
+        .onAppear{
+            FirebaseManager.getNotifications { data in
+                self.notifications = data!
+            }
         }
     }
+    
 }
 
 struct NotView_Previews: PreviewProvider {
