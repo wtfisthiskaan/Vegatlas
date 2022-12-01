@@ -18,7 +18,6 @@ struct Location: Identifiable {
 
 
 
-var annotations = [Restaurant]()
 
 struct MapView: View {
     

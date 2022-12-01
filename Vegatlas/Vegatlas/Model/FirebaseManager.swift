@@ -8,7 +8,8 @@
 import Foundation
 import Firebase
 
-
+var favRestaurants = [String]()
+var annotations = [Restaurant]()
 
 struct FirebaseManager{
     static func getUserData(completionHandler: @escaping ([String : Any]?) -> Void){
