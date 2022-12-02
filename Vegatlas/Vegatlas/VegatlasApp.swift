@@ -19,7 +19,13 @@ struct VegatlasApp: App {
                     //DispatchQueue.main.async {
                         FirebaseManager.getUserData { data in
                             if data != nil{
-                                favRestaurants = data?["favorites"] as! [String]
+                                if(data!["favorites"] != nil){
+                                    favRestaurants = data?["favorites"] as! [String]
+                                }
+                                else{
+                                    favRestaurants = [""]
+                                }
+                                
                             }else{
                                 favRestaurants = [""]
                             }

@@ -55,9 +55,14 @@ struct LoginView: View {
                                 isThereError.toggle()
                                 errorMessage = error.localizedDescription
                             }
+                            else{
+                                hasLoggedIn.toggle()
+                            }
                           // ...
+                            
+                            
                         }
-                        hasLoggedIn.toggle()
+                        
                         // firebase sign in
                     }
                 } label: {

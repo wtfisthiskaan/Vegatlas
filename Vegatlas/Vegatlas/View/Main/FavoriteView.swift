@@ -29,7 +29,17 @@ struct FavoriteView: View {
           DispatchQueue.main.async {
               restaurants.removeAll()
               FirebaseManager.getUserData { data in
-                  favRestaurants = data?["favorites"] as! [String]
+                  if(data == nil){
+                      favRestaurants = [""]
+                  }
+                  else{
+                      if(data!["favorites"] != nil){
+                          favRestaurants = data?["favorites"] as! [String]
+                      }
+                      else{
+                          favRestaurants = [""]
+                      }
+                  }
               }
               favRestaurants.forEach { rest in
                   if rest != nil{

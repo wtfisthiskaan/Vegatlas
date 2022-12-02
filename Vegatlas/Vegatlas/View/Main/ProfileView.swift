@@ -37,8 +37,7 @@ struct ProfileView: View {
                             .overlay(Circle().stroke(Color.black, lineWidth: 5))
                         
                         
-                        Text("Bahadir Kilinc")
-                            .foregroundColor(Color.black)
+                        
                     }
                     .padding()
                     
