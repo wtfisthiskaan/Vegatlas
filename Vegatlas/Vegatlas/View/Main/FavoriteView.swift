@@ -19,10 +19,11 @@ struct FavoriteView: View {
                 .padding(.vertical, 4)
             }
           }
-          .navigationBarTitle("Favorites", displayMode: .inline)
-          .toolbarBackground(Color("Green"), for: .navigationBar)
-          .toolbarBackground(.visible, for: .navigationBar)
+
         }
+        .navigationBarTitle("Favorites", displayMode: .inline)
+        .toolbarBackground(Color("Green"), for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
         
       } //: NAVIGATION
       .onAppear{
