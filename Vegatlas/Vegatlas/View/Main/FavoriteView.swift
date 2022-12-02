@@ -32,8 +32,12 @@ struct FavoriteView: View {
                   favRestaurants = data?["favorites"] as! [String]
               }
               favRestaurants.forEach { rest in
-                  let r = annotations.filter{$0.name == rest}.first
-                  restaurants.append(r!)
+                  if rest != nil{
+                      let r = annotations.filter{$0.name == rest}.first
+                      if(r != nil){
+                          restaurants.append(r!)
+                      }
+                  }
               }
           }
       }

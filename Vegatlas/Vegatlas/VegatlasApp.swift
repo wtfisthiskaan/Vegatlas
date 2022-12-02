@@ -16,14 +16,24 @@ struct VegatlasApp: App {
         WindowGroup {
             ContentView()
                 .onAppear{
-                    DispatchQueue.main.async {
-                        FirebaseManager.getRestaurantData(completionHandler: { data in
-                            annotations = data!
-                        })
+                    //DispatchQueue.main.async {
                         FirebaseManager.getUserData { data in
-                            favRestaurants = data?["favorites"] as! [String]
+                            if data != nil{
+                                favRestaurants = data?["favorites"] as! [String]
+                            }else{
+                                favRestaurants = [""]
+                            }
                         }
-                    }
+                        
+                        FirebaseManager.getRestaurantData(completionHandler: { data in
+                            if(data == nil){
+                                
+                            }
+                            else{
+                                annotations = data!
+                            }
+                        })
+                    //}
              
                 }
         }

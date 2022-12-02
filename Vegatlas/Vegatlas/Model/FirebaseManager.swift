@@ -17,12 +17,28 @@ struct FirebaseManager{
     static func getUserData(completionHandler: @escaping ([String : Any]?) -> Void){
         let db = Firestore.firestore()
         DispatchQueue.main.async() {
-            let docRef = db.collection("Users").document(Auth.auth().currentUser?.uid ?? "")
-            docRef.getDocument { (document, error) in
-                if let document = document, document.exists {
-                    completionHandler(document.data())
+            
+            //let docRef = db.collection("Users").document(Auth.auth().currentUser?.uid ?? "")
+            
+            let uid = Auth.auth().currentUser?.uid ?? ""
+            let docRef = db.collection("Users")
+            if(uid != ""){
+            let userDoc = docRef.document(uid)
+            userDoc.getDocument { (document, error) in
+                    if let err = error {
+                             print(err.localizedDescription) //document did not exist
+                             completionHandler(nil)
+                         }
+                    else if let document = document {
+                        completionHandler(document.data())
+                    }
                 }
+            
             }
+            else{
+                completionHandler(nil)
+            }
+            
         }
     }
     static func getNotifications(completionHandler: @escaping ([Notifications]?) -> Void){
@@ -50,6 +66,10 @@ struct FirebaseManager{
         let db = Firestore.firestore()
         DispatchQueue.main.async() {
             let docRef = db.collection("Restaurants")
+            if(docRef == nil){
+                completionHandler(nil)
+            }
+             
             docRef.getDocuments { snapshot, error in
                 if let error = error{
                     print(error.localizedDescription)
@@ -57,12 +77,12 @@ struct FirebaseManager{
                     snapshot?.documents.forEach({ restaurant in
                         let data = restaurant.data()
                         var rest = Restaurant(name: data["name"] as! String,
-                                             longitude: data["lon"] as! Double,
-                                             latitude: data["lat"] as! Double,
-                                             averageRating: 0.0,
-                                             workingHours: data["workingHours"] as! String,
-                                             description: data["description"] as! String,
-                                             restaurantType: data["restaurantType"] as! String)
+                                              longitude: data["lon"] as! Double,
+                                              latitude: data["lat"] as! Double,
+                                              averageRating: 0.0,
+                                              workingHours: data["workingHours"] as! String,
+                                              description: data["description"] as! String,
+                                              restaurantType: data["restaurantType"] as! String)
                         func getRestaurant(handler: @escaping ([Restaurant]) -> Void){
                             docRef.document(rest.name).collection("menu").getDocuments { snapshot, error in
                                 if let error = error{
@@ -85,6 +105,9 @@ struct FirebaseManager{
                     })
                 }
             }
+            
         }
+        
+        
     }
 }
