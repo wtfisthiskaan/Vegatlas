@@ -27,16 +27,11 @@ struct ProfileView: View {
                     
                     // MARK: - HEADER
                     HStack(alignment: .top, spacing: 20) {
-                        Image(systemName: "person.fill")
+                        Image("vegan_person")
                             .resizable()
                             .scaledToFit()
                             .padding(.top)
                             .frame(width: 100, height: 100, alignment: .center)
-                            .clipShape(Circle())
-                            .shadow(radius: 10)
-                            .overlay(Circle().stroke(Color.black, lineWidth: 5))
-                        
-                        
                         
                     }
                     .padding()
@@ -99,9 +94,15 @@ struct ProfileView: View {
                     }
                 }
                 .frame(maxWidth: 640)
-                .navigationBarTitle("Account", displayMode: .inline)
                 .toolbarBackground(Color("Green"), for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
+                .toolbar {
+                    ToolbarItem() {
+                        Image("account_logo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                }
             }
             .onAppear(perform: {
                 FirebaseManager.getUserData { data in

@@ -21,9 +21,15 @@ struct FavoriteView: View {
           }
 
         }
-        .navigationBarTitle("Favorites", displayMode: .inline)
         .toolbarBackground(Color("Green"), for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem() {
+                Image("favorites_logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
         
       } //: NAVIGATION
       .onAppear{

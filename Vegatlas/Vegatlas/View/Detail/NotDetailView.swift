@@ -11,7 +11,7 @@ struct NotDetailView: View {
     var notification: Notifications
     var body: some View {
       HStack {
-        Image(systemName: "house.lodge.fill")
+        Image("logo")
           .renderingMode(.original)
           .resizable()
           .scaledToFit()

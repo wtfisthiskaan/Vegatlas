@@ -30,7 +30,12 @@ struct MapView: View {
                     NavigationLink {
                         RestaurantDetailView(restaurant: restaurant)
                     } label: {
-                        Image(systemName: "fork.knife.circle.fill")
+                        VStack{
+                            Text(restaurant.name).font(.system(size: 15,weight: .bold))
+                                
+                            Image(systemName: "fork.knife.circle.fill")
+                        }
+                        
                     }
 
                 }
@@ -44,7 +49,7 @@ struct MapView: View {
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbar {
                     ToolbarItem() {
-                        Image("vegatlas_logo")
+                        Image("map_logo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }

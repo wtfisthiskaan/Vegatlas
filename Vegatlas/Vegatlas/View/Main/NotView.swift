@@ -17,9 +17,15 @@ struct NotView: View {
                     NotDetailView(notification: notification)
                 }
             }
-            .navigationBarTitle("Notifications", displayMode: .inline)
             .toolbarBackground(Color("Green"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem() {
+                    Image("nots_logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+            }
         }
         .onAppear{
             FirebaseManager.getNotifications { data in
